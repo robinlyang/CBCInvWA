@@ -32,19 +32,25 @@ public class CreateSeedData {
         User manager = userService.createUser("Ron", "RON-LName", "ron@gmail.com", 
                 "password", UserType.MANAGER);
         
+        //Find user
+        staff = userService.findUser(staff.getUserId());
+        System.out.println("User Found: " + staff);
+        
         //Creates and persists Customers
         CustomerService customerService = new CustomerService();
         Customer custo1 = customerService.createCustomer(true, "Customer one");
         Customer custo2 = customerService.createCustomer(false, "Customer two");
+        
+        //Find customer
+        custo1 = customerService.findCustomer(custo1.getCustomerId());
+        System.out.println("User Found: " + custo1);
         
         //Creates and persists Vendors
         VendorService vendorService = new VendorService();
         Vendor vendo1 = vendorService.createVendor(true, "Vendor one");
         Vendor vendo2 = vendorService.createVendor(true, "Vendor two");
         
-        //Find user
-        staff = userService.findUser(staff.getUserId());
-        System.out.println("User Found: " + staff);
+        
         
         
     }

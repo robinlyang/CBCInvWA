@@ -38,7 +38,7 @@ public class CustomerService {
         return customer;
     }
     
-    public void removeCustomer(UUID customerId) {
+    public void removeCustomer(String customerId) {
         Customer customer = em.find(Customer.class, customerId);
         if(customer != null) {
             tx.begin();
@@ -47,11 +47,11 @@ public class CustomerService {
         }
     }
     
-    public Customer findCustomer(UUID customerId) {
+    public Customer findCustomer(String customerId) {
         return em.find(Customer.class, customerId);
     }
         
-    public Customer updateCustomer(UUID customerId, boolean status,
+    public Customer updateCustomer(String customerId, boolean status,
             String customerName) {
         Customer user = em.find(Customer.class, customerId);
         if(user != null){

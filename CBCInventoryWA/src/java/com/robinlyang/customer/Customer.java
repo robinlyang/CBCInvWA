@@ -16,7 +16,7 @@ import javax.persistence.Table;
  * @author RobinY
  */
 @Entity
-@Table(name = "T_Customer")
+@Table(name = "t_customer")
 public class Customer {
     
     //==========================================
@@ -26,7 +26,7 @@ public class Customer {
     private String customerId;
     @Column(name = "status")
     private boolean status;
-    @Column(name = "customer_name")
+    @Column(name = "customer_name", length = 100)
     private String customerName;
     
     //==========================================
@@ -37,7 +37,7 @@ public class Customer {
     }
 
     public Customer(boolean status, String customerName) {
-        this.customerId = UUID.randomUUID().toString();
+//        this.customerId = UUID.randomUUID().toString();
         this.status = status;
         this.customerName = customerName;
     }
@@ -68,6 +68,15 @@ public class Customer {
 
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
+    }
+    
+    public String toString(){
+        final StringBuilder sb = new StringBuilder("Customer{");
+        sb.append("id=").append(customerId);
+        sb.append(", status='").append(status).append('\'');
+        sb.append(", customerName='").append(customerName).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
     
 }

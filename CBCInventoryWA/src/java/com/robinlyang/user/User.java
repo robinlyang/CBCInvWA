@@ -24,7 +24,7 @@ import javax.persistence.TemporalType;
  * @author RobinY
  */
 @Entity
-@Table(name = "T_User")
+@Table(name = "t_user")
 public class User{
     
     //==========================================
