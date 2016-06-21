@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.robinlyang.customer;
+package com.robinlyang.vendor;
 
 import java.util.UUID;
 import javax.persistence.Column;
@@ -16,42 +16,42 @@ import javax.persistence.Table;
  * @author RobinY
  */
 @Entity
-@Table(name = "T_Customer")
-public class Customer {
+@Table(name = "T_Vendor")
+public class Vendor {
     
     //==========================================
     //==               Attributes             ==
     //==========================================
     @Id
-    private String customerId;
+    private String vendorId;
     @Column(name = "status")
     private boolean status;
-    @Column(name = "customer_name")
-    private String customerName;
+    @Column(name = "vendor_name")
+    private String vendorName;
     
     //==========================================
     //==               Constructors           ==
     //==========================================
-    public Customer(){
+    public Vendor(){
         
     }
 
-    public Customer(boolean status, String customerName) {
-        this.customerId = UUID.randomUUID().toString();
+    public Vendor(boolean status, String vendorName) {
+        this.vendorId = UUID.randomUUID().toString();
         this.status = status;
-        this.customerName = customerName;
+        this.vendorName = vendorName;
     }
         
     //==========================================
     //==        Getters and Setters           ==
     //==========================================
 
-    public String getCustomerId() {
-        return customerId;
+    public String getVendorId() {
+        return vendorId;
     }
 
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
+    public void setVendorId(String vendorId) {
+        this.vendorId = vendorId;
     }
 
     public boolean isStatus() {
@@ -62,12 +62,11 @@ public class Customer {
         this.status = status;
     }
 
-    public String getCustomerName() {
-        return customerName;
+    public String getVendorName() {
+        return vendorName;
     }
 
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+    public void setVendorName(String vendorName) {
+        this.vendorName = vendorName;
     }
-    
 }
