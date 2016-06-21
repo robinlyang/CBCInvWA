@@ -43,10 +43,6 @@ public class CreateSeedData {
         Vendor vendo2 = vendorService.createVendor(true, "Vendor two");
         
         //Find user
-        System.out.println("///////////");
-        System.out.println(staff.toString());
-        String test = staff.toString();
-        System.out.println("/////////// " + test);
         staff = userService.findUser(staff.getUserId());
         System.out.println("User Found: " + staff);
         
