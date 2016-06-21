@@ -27,9 +27,8 @@ public class UserService {
     //==========================================
     //==             Public Methods           ==
     //==========================================
-    public User createUser(String firstName, String lastName,
-            String email, String password, UserType userType)
-    {
+    public User createUser(String firstName, String lastName, String email, 
+            String password, UserType userType){   
         User user = new User();
         user.setUserId(UUID.randomUUID().toString());
         user.setFirstName(firstName);
@@ -43,7 +42,7 @@ public class UserService {
         return user;
     }
     
-    public void removeUser(UUID userId) {
+    public void removeUser(String userId) {
         User user = em.find(User.class, userId);
         if(user != null) {
             tx.begin();
@@ -52,11 +51,11 @@ public class UserService {
         }
     }
     
-    public User findUser(UUID userId) {
+    public User findUser(String userId) {
         return em.find(User.class, userId);
     }
         
-    public User updateUser(UUID userId, String firstName, String lastName,
+    public User updateUser(String userId, String firstName, String lastName,
             String email, String password, UserType userType) {
         User user = em.find(User.class, userId);
         if(user != null){

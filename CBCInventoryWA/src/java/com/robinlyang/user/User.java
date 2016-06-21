@@ -54,7 +54,7 @@ public class User{
     
     public User(String firstName, String lastName, String email, String password,
             UserType userType){
-        this.userId = UUID.randomUUID().toString();
+//        this.userId = UUID.randomUUID().toString();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -113,6 +113,10 @@ public class User{
         this.userType = userType;
     }
     
+    public String toString(){
+     
+        return userId;
+    }
     
         
 }

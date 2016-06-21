@@ -3,6 +3,8 @@
   <persistence-unit name="cbcInventory" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>com.robinlyang.user.User</class>
+    <class>com.robinlyang.customer.Customer</class>
+    <class>com.robinlyang.vendor.Vendor</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/cbcinventory"/>
