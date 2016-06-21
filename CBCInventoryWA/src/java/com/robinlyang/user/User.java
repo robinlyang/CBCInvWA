@@ -36,7 +36,7 @@ public class User{
     private String firstName;
     @Column(name = "last_name", length = 50)
     private String lastName;
-    @Id @Column(name = "email", length = 150)
+    @Column(name = "email", length = 150)
     private String email;
     @Column(name = "password", length = 50)
     private String password;
@@ -114,9 +114,15 @@ public class User{
     }
     
     public String toString(){
-     
-        return userId;
-    }
+    final StringBuilder sb = new StringBuilder("User{");
+    sb.append("id=").append(userId);
+    sb.append(", firstName='").append(firstName).append('\'');
+    sb.append(", lastName='").append(lastName).append('\'');
+    sb.append(", password=").append(password);
+    sb.append(", userType='").append(userType).append('\'');
+    sb.append('}');
+    return sb.toString();
+  }
     
         
 }

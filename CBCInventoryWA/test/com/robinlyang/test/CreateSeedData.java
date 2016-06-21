@@ -47,7 +47,7 @@ public class CreateSeedData {
         System.out.println(staff.toString());
         String test = staff.toString();
         System.out.println("/////////// " + test);
-        staff = userService.findUser(staff.toString());
+        staff = userService.findUser(staff.getUserId());
         System.out.println("User Found: " + staff);
         
         
